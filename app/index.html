@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FoodTracking</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+  
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+  <script src="./app.js"></script>
+
+</head>
+
+<body onload="App.initialFunct()">
+
+
+  <!-- Index page -->
+  <div id="index">
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Food Tracker</a>
+        <a style="margin-left:775px; " class="btn btn-primary" onclick="App.showProduct()" href="#">Product Info</a>
+        <!-- <a class="btn btn-primary" onclick="App.showChairp()" href="#" >Sign In</a> -->
+        <a class="btn btn-primary" onclick="App.showLogin()" href="#" >SignIn</a>
+      </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center" style="padding-top: 18rem; padding-bottom: 18rem; background: url('images/bg-masthead.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover; ">
+      <div class="overlay"></div>
+      <div class="container" style="width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto;">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Start tracking your food with ease using Blockchain!</h1>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form>
+              <div class="form-row">
+                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                  <input id="signUp" type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                </div>
+                <div class="col-12 col-md-3">
+                  <a class="btn btn-block btn-lg btn-primary" onclick="App.showRegister()" href="#">Sign up!</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center" style="padding-top: 7rem; padding-bottom: 7rem;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="icon-screen-desktop m-auto text-primary"></i>
+              </div>
+              <h3>Secured Transaction</h3>
+              <p class="lead mb-0">It will provide you the most secured way to transfer your money!</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="icon-layers m-auto text-primary"></i>
+              </div>
+              <h3>Instant Purchase</h3>
+              <p class="lead mb-0">This will give you instant access to the existing suppliers!</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="icon-check m-auto text-primary"></i>
+              </div>
+              <h3>Easy to Use</h3>
+              <p class="lead mb-0">You are just a click away from your products!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Showcases -->
+    <section class="showcase">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters">
+
+          <img class="col-lg-6 order-lg-2 text-white showcase-img" src="images/bg-showcase-1.jpg">
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="margin-bottom: auto!important; margin-top: auto!important; padding: 7rem;">
+            <h2>Secured Transaction</h2>
+            <p class="lead mb-0">The Blockchain is designed to provide you most secured and safe transaction as all your transactions are traceable and irreversible!</p>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <img class="col-lg-6 text-white showcase-img" src="images/bg-showcase-2.jpg">
+          <div class="col-lg-6 my-auto showcase-text" style="margin-bottom: auto!important; margin-top: auto!important; padding: 7rem;">
+            <h2>Instant Purchase</h2>
+            <p class="lead mb-0">You can buy your product using any currency as there is no barrier and our ethers are always there for your purchases!</p>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <img class="col-lg-6 order-lg-2 text-white showcase-img" src="images/bg-showcase-3.jpg">
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text" style="margin-bottom: auto!important; margin-top: auto!important; padding: 7rem;">
+            <h2>Easy to Use</h2>
+            <p class="lead mb-0">The application is easy to undersatnd and use as it gives you all the access to the orders and vendors and clients so you can get hold of any of them at any instant of time!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials text-center bg-light" style="padding-top: 7rem; padding-bottom: 7rem;">
+      <div class="container">
+        <h2 class="mb-5">What people are saying...</h2>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="images/testimonials-1.jpg" alt="">
+              <h5>Isha J.</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="images/testimonials-1.jpg" alt="">
+              <h5>Preethi S.</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="images/testimonials-2.jpg" alt="">
+              <h5>Arun C.</h5>
+              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="images/testimonials-3.jpg" alt="">
+              <h5>Preethi M.</h5>
+              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="call-to-action text-white text-center" style="padding-top: 7rem; padding-bottom: 7rem; background: url('images/bg-masthead.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+      <div class="overlay" ></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h2 class="mb-4" >Ready to get started? Sign up now!</h2>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form>
+              <div class="form-row">
+                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                </div>
+                <div class="col-12 col-md-3">
+                  <button id="signup" type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="#">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Contact</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fa fa-facebook fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fa fa-twitter fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-instagram fa-2x fa-fw"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Login -->
+  <div id="login">
+    <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input class="form-control" id="exampleInputEmail2" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input class="form-control" id="exampleInputPassword2" type="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember Password</label>
+            </div>
+          </div>
+          <a class="btn btn-primary btn-block" onclick="App.login()">Login</a>
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" onclick="App.showRegister()" href="#">Register an Account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Register -->
+  <div id="register">
+    <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="exampleInputName">Full Name</label>
+                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter full name">
+              </div>
+              <div class="col-md-6">
+                <label for="exampleRole">Role</label>
+                <select class="form-control" id="exampleRole">
+                  <option value="Producer">Producer</option>
+                  <option value="Distributor">Distributor</option>
+                  <option value="Retailer">Retailer</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Warehouse address</label>
+            <input class="form-control" id="warehouseAddress" type="text" placeholder="Enter warehouse address">
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="exampleInputPassword1">Password</label>
+                <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+              </div>
+              <div class="col-md-6">
+                <label for="exampleConfirmPassword">Confirm password</label>
+                <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="additionalInfo">Additional Info</label>
+            <textarea class="form-control" id="additionalInfo" placeholder="Enter additional info"></textarea>
+          </div>
+          <a class="btn btn-primary btn-block" onclick="App.setEntityInfo()" href="#">Register</a>
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="#" onclick="App.showLogin();chairPerson();">Login Page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- product -->
+<div id="product">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Food Tracker</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      <div class="producer">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion"> 
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
+              <a class="nav-link" href="#" onclick="App.showProductDetails()">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Products</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
+              <a class="nav-link" href="#" onclick="App.showFDA()">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">FDA</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto"> 
+        <li class="nav-item">
+          <a href="index.html"  class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Exit</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#" id="dashboard">Product Info</a>
+        </li>
+      </ol>
+      <div id="prod_ViewDetails">
+        <div class="card mb-3">
+          <div class="card-header"> View Product Details </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="_gID">Product ID:</label>
+                <input type="text" class="form-control" id="_gID">
+              </div>
+              <button onclick="App.general_public()" data-toggle="collapse" data-target="#collapseExample" class="btn btn-dark">Submit</button>
+            </form>
+            <div class="collapse" id="collapseExample" style="margin-top: 15px;">
+                <div class="card card-body" >
+                  Product Name:  <input style="border:none;background-color:transparent" id="_gpname">
+                  Product Info:  <input style="border:none;background-color:transparent" id="_gpinfo">
+                  Producer Name: <input style="border:none;background-color:transparent" id="_gname">
+                  Producer Info:  <input style="border:none;background-color:transparent" id="_ginfo">
+                  Organic:  <input style="border:none;background-color:transparent" id="_gorg">
+                  Mfg Date: <input style="border:none;background-color:transparent" id="_gdate">
+                </div>
+            </div>             
+          </div>
+        </div>
+      </div>
+      <div id="prod_FDADetails">
+        <div class="card mb-3">
+          <div class="card-header"> FDA: Product Information </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="fID">Enter Product ID:</label>
+                <input type="text" class="form-control" id="fID">
+              </div>
+              <button onclick="App.FDA()" data-toggle="collapse" data-target="#collapseExampleI" class="btn btn-dark">Submit</button>
+            </form>
+            <div class="collapse" id="collapseExampleI" style="margin-top: 15px;">
+                <div class="card card-body" >
+                  Producer Name:  <input style="border:none;background-color:transparent" id="_fname">
+                  Producer Timestamp:  <input style="border:none;background-color:transparent" id="_ftime">
+                  Distributor Name: <input style="border:none;background-color:transparent" id="fdname">
+                  Distributor Timestamp:  <input style="border:none;background-color:transparent" id="fdtime">
+                  Retailer Name:  <input style="border:none;background-color:transparent" id="frname">
+                  Retailer Timestamp: <input style="border:none;background-color:transparent" id="frtime">
+                </div>
+            </div>             
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Exit" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="index.html">Exit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chairperson -->
+<div id="chairperson" class="fixed-nav sticky-footer bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Food Tracker</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-wrench"></i>
+                <span class="nav-link-text">Role</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseComponents">
+                <li>
+                  <a href="#" id="ch_setEntityRole" onclick="App.showSetRole()">Set Role</a>
+                </li>
+                <li>
+                  <a href="#" id="ch_getEntityRole" onclick="App.showGetRole()">Get Role</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
+              <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text" id="ch_viewEntityDetails" onclick="App.getEntityInfo()">Entity Details</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto"> 
+        <li class="nav-item">
+          <span class="nav-link" data-toggle="modal">
+            Chairperson</span>
+        </li>       
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" data-toggle="modal" data-target="#exampleModal1">
+            <i class="fa fa-fw fa-sign-out" ></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#" id="ch_dashboard">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div id="ch_SetEntityRole">
+        <div class="card mb-3">
+          <div class="card-header"> Set Entity Role </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="setCount">En.ID:</label>
+                <input type="text" class="form-control" id="setCount">
+              </div>
+              <div class="form-group">
+                <label for="entityAdd">Entity Address:</label>
+                <input type="text" class="form-control" id="entityAdd">
+              </div>
+              <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" class="form-control" id="amount">
+              </div>
+              <div class="form-group">
+                <label for="role">Role:</label>
+                <select class="form-control" id="role">
+                  <option value="0">Producer</option>
+                  <option value="1">Distributor</option>
+                  <option value="2">Retailer</option>
+                </select>
+              </div>
+              <button class="btn btn-dark" onclick="App.setRole()" >Submit</button>
+            </form>            
+          </div>
+        </div>
+      </div>
+      <div id="ch_ViewEntityRole">
+        <div class="card mb-3">
+          <div class="card-header"> View Entity Role </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="entityAdd1">Entity Address:</label>
+                <input type="text" class="form-control" id="entityAdd1">
+              </div>
+              <button style="margin-bottom: 15px;" data-toggle="collapse" data-target="#collapseExample1" class="btn btn-dark" onclick="App.getRole()">Submit</button>
+            </form>  
+
+              <div class="collapse" id="collapseExample1">
+                <div class="card card-body">
+                  Role:  <input style="border:none;background-color:transparent" id="getRole">
+                  Name:  <input style="border:none;background-color:transparent" id="getName">
+                  Amount: <input style="border:none;background-color:transparent" id="getAmount">
+                </div>
+              </div>          
+          </div>
+        </div>
+      </div>
+      <div id="ch_ViewEntityDetails">
+        <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Entity Details</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="getEntityTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>En.Id</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Role</th>
+                  <th>Entity Type</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>En.Id</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Role</th>
+                  <th>Entity Type</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Recently Updated</div>
+      </div>
+    </div>
+    </div>
+    
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Producer -->
+<div id="producer" class="fixed-nav sticky-footer bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Food Tracker</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      <div class="producer">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponentsPr" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-cubes"></i>
+                <span class="nav-link-text">Products</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseComponentsPr">
+                <li>
+                  <a href="#" id="pr_enterProductDetails" onclick="App.showPr_ProductDetails()">Enter Details</a>
+                </li>
+                <li>
+                  <a href="#" onclick="App.displayForDistributor1()" id="pr_viewProductDetails">View Details</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto"> 
+        <li class="nav-item">
+          <span class="nav-link" data-toggle="modal">
+            Producer</span>
+        </li>       
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" data-toggle="modal" data-target="#exampleModal2">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#" id="pr_dashboard">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div id="pr_EnterDetails">
+        <div class="card mb-3">
+          <div class="card-header"> Enter Product Details </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="_id">Product ID:</label>
+                <input type="text" class="form-control" id="_id">
+              </div>
+              <div class="form-group">
+                <label for="_pname">Product Name:</label>
+                <input type="text" class="form-control" id="_pname">
+              </div>
+              <div class="checkbox">
+                <label for="_organic">Organic:</label>
+                <input type="checkbox" id="_organic" value="yes">
+              </div>
+              <div class="form-group">
+                <label for="_infog">Additional Information:</label>
+                <input type="text" class="form-control" id="_infog">
+              </div>
+              <div class="form-group">
+                <label for="_price">Price:</label>
+                <input type="number" class="form-control" id="_price">
+              </div>
+              <div class="form-group">
+                <label for="_quantity">Quantity:</label>
+                <input type="number" class="form-control" id="_quantity">
+              </div>
+              <div class="form-group">
+                <label for="_expDate">Expiration Date:</label>
+                <input type="number" class="form-control" id="_expDate">
+              </div>
+              <div class="form-group">
+                <label for="_cond">Condition:</label>
+                <select class="form-control" id="_cond">
+                  <option value="0">Undamaged</option>
+                  <option value="1">Undamaged, Temperature Controlled</option>
+                  <option value="2">Temperature Controlled</option>
+                </select>
+              </div>
+              <button  onclick="App.producerEnterProductDetails()" class="btn btn-dark">Submit</button>
+            </form>            
+          </div>
+        </div>
+      </div>
+      <div id="pr_ViewDetails">
+        <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Product Details</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="producerProductTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Organic</th>
+                  <th>Condition</th>
+                  <th>Mfg Date</th>
+                  <th>Producer Address</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Organic</th>
+                  <th>Condition</th>
+                  <th>Mfg Date</th>
+                  <th>Producer Address</th>
+                </tr>
+              </tfoot>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Recently Updated</div>
+      </div>
+      </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Distributor -->
+<div id="distributor" class="fixed-nav sticky-footer bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Food Tracker</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="distributor" id="distributor">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponentsDi" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-cubes"></i>
+                <span class="nav-link-text">Your Products</span>
+              </a>
+              <ul class="sidenav-second-level collapse" id="collapseComponentsDi">
+                <li>
+                  <a href="#" id="di_enterProductDetails" onclick="App.showDi_ProductDetails()">Enter Details</a>
+                </li>
+                <li>
+                  <a href="#" onclick="App.displayForRetailer1()" id="di_viewProductDetails">View Details</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
+              <a class="nav-link" href="#" onclick="App.displayForDistributor1()" id="di_viewProducerProducts">
+                <i class="fa fa-fw fa-eye"></i>
+                <span class="nav-link-text">Order Products</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Purchase">
+              <a class="nav-link" href="#" onclick="App.showDi_Purchase()">
+                <i class="fa fa-fw fa-credit-card"></i>
+                <span class="nav-link-text" id="purchase">Purchase</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto"> 
+        <li class="nav-item">
+          <span class="nav-link" data-toggle="modal">
+            Distributor</span>
+        </li>        
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" data-toggle="modal" data-target="#exampleModal3">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#" id="di_dashboard">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div id="di_EnterDetails">
+        <div class="card mb-3">
+          <div class="card-header"> Enter Product Details </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="_dppid">Product ID:</label>
+                <input type="text" class="form-control" id="_dppid">
+              </div>
+              <div class="form-group">
+                <label for="_dpinfo">Additional Information:</label>
+                <input type="text" class="form-control" id="_dpinfo">
+              </div>
+              <div class="form-group">
+                <label for="_dpvalue">Price:</label>
+                <input type="number" class="form-control" id="_dpvalue">
+              </div>
+              <div class="form-group">
+                <label for="_dpcond">Condition:</label>
+                <select class="form-control" id="_dpcond">
+                  <option value="0">Undamaged</option>
+                  <option value="1">Undamaged, Temperature Controlled</option>
+                  <option value="2">Temperature Controlled</option>
+                </select>
+              </div>
+              <button onclick="App.distributorProductDetails()" class="btn btn-dark">Submit</button>
+            </form>            
+          </div>
+        </div>
+      </div>
+      <div id="di_ViewDetails">
+        <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Product Details</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="distProductTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Condition</th>
+                  <th>Distributor Address</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Condition</th>
+                  <th>Distributor Address</th>
+                </tr>
+              </tfoot>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Recently Updated</div>
+      </div>
+      </div>
+      <div id="di_producerProducts">
+        <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Product Details</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="distributorPrProductTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Organic</th>
+                  <th>Condition</th>
+                  <th>Mfg Date</th>
+                  <th>Producer Address</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Organic</th>
+                  <th>Condition</th>
+                  <th>Mfg Date</th>
+                  <th>Producer Address</th>
+                </tr>
+              </tfoot>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Recently Updated</div>
+      </div>
+      </div>
+      <div id="di_MakeTransaction">
+        <div class="card mb-3">
+          <div class="card-header"> Make Transactions </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="_dproductID">Product ID:</label>
+                <input type="text" class="form-control" id="_dproductID">
+              </div>
+              <div class="form-group">
+                <label for="_dquantity">Quantity:</label>
+                <input type="text" class="form-control" id="_dquantity">
+              </div>
+              <div class="form-group">
+                <label for="_daddress">Entity Address:</label>
+                <input type="text" class="form-control" id="_daddress">
+              </div>
+              <div class="form-group">
+                <label for="_dcondition">Condition:</label>
+                <select class="form-control" id="_dcondition">
+                  <option value="0">Undamaged</option>
+                  <option value="1">Undamaged, Temperature Controlled</option>
+                  <option value="2">Temperature Controlled</option>
+                </select>
+              </div>
+              <button onclick="App.distributorBuyProduct()" class="btn btn-dark">Purchase</button>
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Retailer -->
+<div id="retailer" class="fixed-nav sticky-footer bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Food Tracker</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="retailer">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
+              <a class="nav-link" href="#" id="re_viewProductDetails" onclick="App.displayForRetailer1()">
+                <i class="fa fa-fw fa-eye"></i>
+                <span class="nav-link-text">View Products</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Purchase">
+              <a class="nav-link" href="#" onclick="App.showRe_Purchase()">
+                <i class="fa fa-fw fa-credit-card"></i>
+                <span class="nav-link-text" id="re_purchase">Purchase</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">  
+        <li class="nav-item">
+          <span class="nav-link" data-toggle="modal">
+            Retailer</span>
+        </li>       
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" data-toggle="modal" data-target="#exampleModal4">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#" id="dashboard">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div id="re_ViewDetails">
+        <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Product Details</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="retailerProductTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Condition</th>
+                  <th>Distributor Address</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Condition</th>
+                  <th>Distributor Address</th>
+                </tr>
+              </tfoot>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Recently Updated</div>
+      </div>
+      </div>
+      <div id="re_MakeTransaction">
+        <div class="card mb-3">
+          <div class="card-header"> Make Transactions </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="_drpid">Product ID:</label>
+                <input type="text" class="form-control" id="_drpid">
+              </div>
+              <div class="form-group">
+                <label for="_dramt">Quantity:</label>
+                <input type="text" class="form-control" id="_dramt">
+              </div>
+              <div class="form-group">
+                <label for="_draddr">Entity Address:</label>
+                <input type="text" class="form-control" id="_draddr">
+              </div>
+              <div class="form-group">
+                <label for="_drcond">Condition:</label>
+                <select class="form-control" id="_drcond">
+                  <option value="0">Undamaged</option>
+                  <option value="1">Undamaged, Temperature Controlled</option>
+                  <option value="2">Temperature Controlled</option>
+                </select>
+              </div>
+              <button onclick="App.RetailerBuyProduct()" class="btn btn-dark">Purchase</button>
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
